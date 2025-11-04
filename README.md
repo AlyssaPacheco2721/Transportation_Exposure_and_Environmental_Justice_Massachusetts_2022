@@ -1,14 +1,41 @@
-### Environmental-Justice-and-Air-Quality-in-Massachusetts
-Analyzing fine particulate pollution (PM2.5) in relation to income and population demographics.
+# Environmental Justice and Air Quality in Massachusetts
 
-### Overview
 This project examines whether fine particulate matter (PM2.5) pollution disproportionately affects low-income and minority communities across Massachusetts. The analysis integrates EPA Air Quality data, EPA EJScreen demographic indicators, and U.S. Census tract boundaries to explore relationships between pollution exposure and socioeconomic variables.
 
-### Objectives
-- Visualize PM2.5 concentrations across Massachusetts census tracts.
-- Compare pollution exposure across income groups.
-- Identify potential environmental justice patterns and disparities.
+---
 
+### Project Contents
+- **/AQI_map_layout.jpg/** → Spatial map showing PM2.5 concentrations by census tract.  
+- **/correlation_plot.png/** → Bar chart of average PM2.5 by income group.  
+- **/summary_table.csv/** → SQL summary table of mean pollution values.  
+- **/analysis.sql/** → SQL script containing data cleaning, joins, and aggregation queries.  
+- **/air_quality_trends.py/** → Python script used for data visualization.
+
+---
+
+### Methodology
+1. Imported EPA AQS PM2.5 data (2022) as point features and joined to census tracts using spatial join in ArcGIS Pro.  
+2. Combined tract-level pollution averages with demographic indicators from EPA EJScreen and Census ACS.  
+3. Categorized income groups as:
+   - *Low Income* (< $50,000)  
+   - *Middle Income* ($50,000–$100,000)  
+   - *High Income* (> $100,000)
+4. Calculated average PM2.5 concentrations for each income group using SQL queries.  
+5. Visualized results through both spatial mapping and a summary bar chart generated in Python.
+
+---
+
+### Key Findings (Preliminary)
+- Low-income tracts displayed slightly higher mean PM2.5 concentrations than high-income tracts.  
+- Areas with elevated PM2.5 exposure generally overlapped with dense urban corridors and major transportation routes.  
+- The analysis supports continued monitoring of how socioeconomic and spatial factors intersect to influence air quality exposure.
+
+---
+
+### Tools Used
+ArcGIS Pro | QGIS | SQLite | Python | Pandas | Matplotlib
+
+---
 ### Data Sources
 - **EPA Air Quality System (AQS) – Annual Summary Data (2022)**  
   [https://aqs.epa.gov/aqsweb/airdata/download_files.html](https://aqs.epa.gov/aqsweb/airdata/download_files.html)  
@@ -33,39 +60,6 @@ Using 2022 ensures consistency with both **EPA EJScreen** and **U.S. Census ACS 
 
 ---
 
-### Methods
-1. Imported EPA AQS PM2.5 data (2022) as point features and joined to census tracts using spatial join in ArcGIS Pro.  
-2. Combined tract-level pollution averages with demographic indicators from EPA EJScreen and Census ACS.  
-3. Categorized income groups as:
-   - *Low Income* (< $50,000)  
-   - *Middle Income* ($50,000–$100,000)  
-   - *High Income* (> $100,000)
-4. Calculated average PM2.5 concentrations for each income group using SQL queries.  
-5. Visualized results through both spatial mapping and a summary bar chart generated in Python.
-
----
-
-### Tools Used
-ArcGIS Pro | QGIS | SQLite | Python | Pandas | Matplotlib
-
----
-
-### Key Findings (Preliminary)
-- Low-income tracts displayed slightly higher mean PM2.5 concentrations than high-income tracts.  
-- Areas with elevated PM2.5 exposure generally overlapped with dense urban corridors and major transportation routes.  
-- The analysis supports continued monitoring of how socioeconomic and spatial factors intersect to influence air quality exposure.
-
----
-
-### Outputs
-- `AQI_map_layout.jpg` — Spatial map showing PM2.5 concentrations by census tract.  
-- `correlation_plot.png` — Bar chart of average PM2.5 by income group.  
-- `summary_table.csv` — SQL summary table of mean pollution values.  
-- `analysis.sql` — SQL script containing data cleaning, joins, and aggregation queries.  
-- `air_quality_trends.py` — Python script used for data visualization.
-
----
-
 ### Future Improvements
 - Incorporate 2023–2024 AQS data once fully validated for time-series trend analysis.  
 - Integrate additional indicators (ozone, NO₂, or traffic proximity).  
@@ -78,4 +72,7 @@ Pacheco, A. (2025). *Environmental Justice and Air Quality in Massachusetts: An 
 
 ---
 
-*Created by **Alyssa Pacheco** — 2025*  
+### Author
+**Alyssa Pacheco**  
+Environmental Science | GIS & Data Science 
+
