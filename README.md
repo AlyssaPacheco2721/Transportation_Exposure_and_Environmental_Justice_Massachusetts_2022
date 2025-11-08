@@ -1,39 +1,70 @@
-# Environmental Justice and Air Quality in Massachusetts
+# Transportation Exposure & Environmental Justice in Massachusetts 2022
+Exploring the intersection of transportation infrastructure, air quality, and community demographics using GIS & EPA EJScreen data
 
-This project examines whether fine particulate matter (PM2.5) pollution disproportionately affects low-income and minority communities across Massachusetts. The analysis integrates EPA Air Quality data, EPA EJScreen demographic indicators, and U.S. Census tract boundaries to explore relationships between pollution exposure and socioeconomic variables.
+This project investigates whether transportation-related air pollution and traffic exposure vary across different income and minority populations in Massachusetts.
+
+The analysis expands upon an earlier PM₂.₅ air-quality assessment, which found relatively uniform pollution levels statewide. By incorporating additional indicators from the EPA’s EJScreen dataset—specifically Diesel Particulate Matter (DSLPM) and Traffic Proximity (PTRAF)—this project explores whether transportation corridors such as major highways and the South Coast Rail expansion correspond with higher environmental burdens in vulnerable communities.
+
+---
+### Objective
+- Evaluate traffic proximity (PTRAF) and diesel particulate matter (DSLPM) exposure across census tracts.
+- Compare results by income and minority composition to identify possible environmental justice disparities.
+- Map and visualize results to highlight localized transportation-related exposure patterns.
+- Frame findings within the context of Massachusetts’ transportation development, particularly the South Coast Rail project.
 
 ---
 
 ### Project Contents
-- **/AQI_map_layout.jpg/** → Spatial map showing PM2.5 concentrations by census tract.  
-- **/correlation_plot.png/** → Bar chart of average PM2.5 by income group.  
-- **/summary_table.csv/** → SQL summary table of mean pollution values.  
-- **/analysis.sql/** → SQL script containing data cleaning, joins, and aggregation queries.  
-- **/air_quality_trends.py/** → Python script used for data visualization.
-
+- **/maps/PM25_map_layout.jpg/** → Baseline air quality map
+- **/maps/PTRAF_map_layout.jpg/** → Traffic proximity exposure
+- **/maps/DSLPM_map_layout.jpg/** → Diesel PM exposure
+- **/outputs/summary_table_PTRAF.csv/** → Mean traffic proximity by group
+- **/outputs/summary_table_DSLPM.csv/** → Mean diesel PM by group
+- **/outputs/ptraf_by_income_chart.png/** → Bar chart – PTRAF vs Income
+- **/outputs/dslpm_by_minority_chart.png/** → Bar chart – DSLPM vs Minority
+- **/Environmental_Justice_AirQuality_Mass.aprx** → ArcGIS Pro project file
+- /**StoryMap_Link.txt** → ADD URL
 ---
 
 ### Methodology
-1. Imported EPA AQS PM2.5 data (2022) as point features and joined to census tracts using spatial join in ArcGIS Pro.  
-2. Combined tract-level pollution averages with demographic indicators from EPA EJScreen and Census ACS.  
-3. Categorized income groups as:
-   - *Low Income* (< $50,000)  
-   - *Middle Income* ($50,000–$100,000)  
-   - *High Income* (> $100,000)
-4. Calculated average PM2.5 concentrations for each income group using SQL queries.  
-5. Visualized results through both spatial mapping and a summary bar chart generated in Python.
+1. Data Preparation
+- Unzipped and imported EJScreen 2022 data into ArcGIS Pro.
+- Clipped data to Massachusetts boundary.
+- Removed null or geometry-only records.
+- Created two categorical variables:
+   - Income_Group: High / Mid / Low based on LOWINCPCT
+   - Minority_Group: High / Mid / Low based on MINORPCT
 
+2. Baseline Analysis
+- Examined PM₂.₅ concentrations by income group.
+- Found minimal variation (6.78–6.82 µg/m³), suggesting uniform air quality statewide.
+- Created baseline map layout and summary bar chart.
+
+3. Transportation Exposure Analysis
+- Mapped Traffic Proximity (PTRAF) and Diesel PM (DSLPM) to identify regional patterns.
+- Overlaid commuter rail lines and major highways (I-195, Route 24, South Coast Rail corridor).
+- Used Summary Statistics to calculate mean PTRAF and DSLPM by both Income and Minority Groups.
+- Exported summary tables to Excel for bar chart visualization.
+
+4. Visualization & StoryMap Integration
+- Designed multiple map layouts:
+   - PM₂.₅ baseline map
+   - PTRAF exposure map
+   - DSLPM exposure map
+- Created bar charts illustrating exposure differences across demographic groups.
+- Combined spatial and chart outputs in an ArcGIS StoryMap to narrate findings.
+  
 ---
 
 ### Key Findings (Preliminary)
-- Low-income tracts displayed slightly higher mean PM2.5 concentrations than high-income tracts.  
-- Areas with elevated PM2.5 exposure generally overlapped with dense urban corridors and major transportation routes.  
-- The analysis supports continued monitoring of how socioeconomic and spatial factors intersect to influence air quality exposure.
+- Uniform statewide PM₂.₅: Modeled concentrations were consistent across income groups, suggesting equitable ambient air quality.
+- Localized transportation disparities: PTRAF and DSLPM values were higher in high-minority and low-income tracts near urban centers, major highways, and commuter rail expansion zones.
+- These results highlight the importance of integrating transportation exposure metrics into environmental justice assessments, even in regions with generally clean air.
 
 ---
 
 ### Tools Used
-ArcGIS Pro | QGIS | SQLite | Python | Pandas | Matplotlib
+ArcGIS Pro | ArcGIS Online StoryMaps | Excel | Python |
 
 ---
 ### Data Sources
@@ -49,6 +80,10 @@ ArcGIS Pro | QGIS | SQLite | Python | Pandas | Matplotlib
   [https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html)  
   Supplies tract boundaries and demographic data (median household income, population counts, etc.).
 
+  -**MBTA / MassGIS Transportation Data**
+  ADD URL
+  Rail lines and highway corridors for context
+
 ---
 
 ### Data Year Justification
@@ -61,18 +96,19 @@ Using 2022 ensures consistency with both **EPA EJScreen** and **U.S. Census ACS 
 ---
 
 ### Future Improvements
-- Incorporate 2023–2024 AQS data once fully validated for time-series trend analysis.  
-- Integrate additional indicators (ozone, NO₂, or traffic proximity).  
-- Build an interactive dashboard using ArcGIS Online or Power BI to visualize results by community.
+
 
 ---
 
 ### Citation
-Pacheco, A. (2025). *Environmental Justice and Air Quality in Massachusetts: An exploratory analysis of PM2.5 exposure and socioeconomic inequality using GIS, SQL, and Python.* GitHub Repository.  
+
 
 ---
 
 ### Author
-**Alyssa Pacheco**  
-Environmental Science | GIS & Data Science 
+**Alyssa Pacheco**
+Environmental Data Scientist | GIS & Analytics for Ecology & Conservation
+📍 New Bedford, Massachusetts
+🌐 alyssapacheco.com
+🐙 github.com/alyssapacheco2721
 
