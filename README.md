@@ -1,5 +1,4 @@
-# Transportation Exposure & Environmental Justice in Massachusetts 2022
-Exploring the intersection of transportation infrastructure, air quality, and community demographics using GIS & EPA EJScreen data
+# Transportation Exposure and Environmental Justice in Massachusetts 2022
 
 This project investigates whether transportation-related air pollution and traffic exposure vary across different income and minority populations in Massachusetts.
 
