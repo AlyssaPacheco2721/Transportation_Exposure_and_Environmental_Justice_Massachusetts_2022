@@ -94,8 +94,8 @@ Using 2022 ensures consistency with both **EPA EJScreen** and **U.S. Census ACS 
 
 ---
 
-### Null Data
-Nine census tracts contained null PTRAF values due to missing model data in EPA EJScreen (2022). One notable gap appears in central Massachusetts, reflecting a data coverage limitation rather than a true absence of traffic exposure.
+### Data Limitations
+The PTRAF field (Traffic Proximity Index) contained nine null values in the EPA EJScreen 2022 dataset for Massachusetts, including one tract in central Massachusetts. These gaps represent missing modeled data, not zero traffic exposure. Null tracts were excluded from summary calculations but retained in maps as “No Data” for transparency.
 
 ---
 
