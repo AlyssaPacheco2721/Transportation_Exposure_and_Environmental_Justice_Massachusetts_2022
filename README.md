@@ -12,15 +12,15 @@ This project examines transportation-related environmental burdens across Massac
 ---
 
 ### Project Contents
-- **/maps/PM25_map_layout.jpg/** → Baseline air quality map
-- **/maps/PTRAF_map_layout.jpg/** → Traffic proximity exposure
-- **/maps/DSLPM_map_layout.jpg/** → Diesel PM exposure
+- **/maps/PM2.5_Across_Mass_2022_MapLayout.pdf/** → Baseline air quality map
+- **/maps/TrafficProx_Across_Mass_2022_MapLayout.pdf/** → Traffic proximity exposure
   
+- **/outputs/summary_table_PM25.csv/** → Mean air quality 
 - **/outputs/summary_table_PTRAF.csv/** → Mean traffic proximity by group
-- **/outputs/summary_table_DSLPM.csv/** → Mean diesel PM by group
-- **/outputs/ptraf_by_income_chart.png/** → Bar chart – PTRAF vs Income
-- **/outputs/dslpm_by_minority_chart.png/** → Bar chart – DSLPM vs Minority
-- **/outputs/Project_Summary.pdf**  → Final project summary PDF
+- **/outputs/PTRAF_charts.pdf/** → Bar chart – PTRAF vs Income vs Minority
+  
+- **/outputs/EJ_AirQuality_Mass.aprx/**  → ArcGIS Pro Project file
+- **/outputs/EJ_Transportation_Project_Summary2.pdf/**  → Final project summary PDF
 ---
 
 ### Methodology
