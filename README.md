@@ -1,15 +1,13 @@
 # Transportation Exposure and Environmental Justice in Massachusetts 2022
 
-This project investigates whether transportation-related air pollution and traffic exposure vary across different income and minority populations in Massachusetts.
-
-The analysis expands upon an earlier PM₂.₅ air-quality assessment, which found relatively uniform pollution levels statewide. By incorporating additional indicators from the EPA’s EJScreen dataset—specifically Diesel Particulate Matter (DSLPM) and Traffic Proximity (PTRAF)—this project explores whether transportation corridors such as major highways and the South Coast Rail expansion correspond with higher environmental burdens in vulnerable communities.
+This project examines transportation-related environmental burdens across Massachusetts, focusing on how traffic exposure varies among income and minority populations. Building on an initial PM₂.₅ analysis that showed minimal statewide variation, this expanded study incorporates EPA EJScreen’s Traffic Proximity Index (PTRAF) to evaluate more localized disparities along highway corridors and urban transportation networks.
 
 ---
 ### Objective
-- Evaluate traffic proximity (PTRAF) and diesel particulate matter (DSLPM) exposure across census tracts.
-- Compare results by income and minority composition to identify possible environmental justice disparities.
-- Map and visualize results to highlight localized transportation-related exposure patterns.
-- Frame findings within the context of Massachusetts’ transportation development, particularly the South Coast Rail project.
+- Assess traffic proximity exposure (PTRAF) across Massachusetts census tracts.
+- Compare PTRAF levels across income groups and minority population groups.
+- Identify how transportation corridors (interstates, MBTA lines, South Coast Rail) influence environmental burdens.
+- Visualize results using GIS maps and charts to highlight environmental justice patterns.
 
 ---
 
@@ -17,53 +15,70 @@ The analysis expands upon an earlier PM₂.₅ air-quality assessment, which fou
 - **/maps/PM25_map_layout.jpg/** → Baseline air quality map
 - **/maps/PTRAF_map_layout.jpg/** → Traffic proximity exposure
 - **/maps/DSLPM_map_layout.jpg/** → Diesel PM exposure
+  
 - **/outputs/summary_table_PTRAF.csv/** → Mean traffic proximity by group
 - **/outputs/summary_table_DSLPM.csv/** → Mean diesel PM by group
 - **/outputs/ptraf_by_income_chart.png/** → Bar chart – PTRAF vs Income
 - **/outputs/dslpm_by_minority_chart.png/** → Bar chart – DSLPM vs Minority
-- **/Environmental_Justice_AirQuality_Mass.aprx** → ArcGIS Pro project file
-- /**StoryMap_Link.txt** → ADD URL
+- **/outputs/Project_Summary.pdf**  → Final project summary PDF
 ---
 
 ### Methodology
 1. Data Preparation
-- Unzipped and imported EJScreen 2022 data into ArcGIS Pro.
-- Clipped data to Massachusetts boundary.
-- Removed null or geometry-only records.
-- Created two categorical variables:
-   - Income_Group: High / Mid / Low based on LOWINCPCT
-   - Minority_Group: High / Mid / Low based on MINORPCT
+   - Imported EPA EJScreen 2022 data into ArcGIS Pro
+   - Clipped to Massachusetts state boundary
+   - Removed null and geometry-only rows
+   - Created demographic categories:
+   - Income_Group: Low / Mid / High
+   - Minority_Group: Low / Mid / High
 
-2. Baseline Analysis
-- Examined PM₂.₅ concentrations by income group.
-- Found minimal variation (6.78–6.82 µg/m³), suggesting uniform air quality statewide.
-- Created baseline map layout and summary bar chart.
+2. Baseline Air Quality (PM₂.₅)
+   - PM₂.₅ concentrations were nearly identical across groups (6.78–6.82 μg/m³)
+   - Indicates uniform statewide ambient air quality
+   - Exported baseline map + summary table
 
-3. Transportation Exposure Analysis
-- Mapped Traffic Proximity (PTRAF) and Diesel PM (DSLPM) to identify regional patterns.
-- Overlaid commuter rail lines and major highways (I-195, Route 24, South Coast Rail corridor).
-- Used Summary Statistics to calculate mean PTRAF and DSLPM by both Income and Minority Groups.
-- Exported summary tables to Excel for bar chart visualization.
+3. Traffic Proximity (PTRAF) Analysis
+   - Mapped PTRAF statewide
+   - Overlaid transportation infrastructure:
+   - Major highways (I-90, I-93, I-95, I-195, Route 24)
+   - MBTA commuter rail
+   - South Coast Rail expansion
+   - Used Summary Statistics to calculate:
+   - Mean PTRAF by Income Group
+   - Mean PTRAF by Minority Group
+   - Exported results to Excel for chart creation
 
-4. Visualization & StoryMap Integration
-- Designed multiple map layouts:
+4. Visualization
    - PM₂.₅ baseline map
    - PTRAF exposure map
-   - DSLPM exposure map
-- Created bar charts illustrating exposure differences across demographic groups.
-- Combined spatial and chart outputs in an ArcGIS StoryMap to narrate findings.
-  
+   - Bar + line charts comparing exposure across groups
+   - Final Project Summary PDF integrating maps, charts, and narrative results
+
 ---
 
-### Key Findings (Preliminary)
-- Uniform statewide PM₂.₅: Modeled concentrations were consistent across income groups, suggesting equitable ambient air quality.
-- Localized transportation disparities: PTRAF and DSLPM values were higher in high-minority and low-income tracts near urban centers, major highways, and commuter rail expansion zones.
-- These results highlight the importance of integrating transportation exposure metrics into environmental justice assessments, even in regions with generally clean air.
+### Key Findings
+1. Air quality (PM₂.₅) is uniform statewide
+   - Little to no disparity across income groups, confirming ambient pollution is relatively consistent across Massachusetts.
+
+2. Traffic exposure is NOT uniform
+   - PTRAF reveals clear disparities:
+   - Low-income communities = highest traffic exposure
+   - High-income communities = lowest exposure
+   - Mid-minority tracts = highest exposure due to their presence in dense urban transportation corridors
+
+3. Income and minority indicators diverge geographically
+   - Massachusetts has two contrasting demographic landscapes:
+   - Western/Central MA → rural, low-income, low-minority, low traffic
+   - Eastern MA (Boston metro, Gateway Cities) → racially diverse, mid-income, high traffic
+   - This explains why income-based and minority-based exposure patterns differ.
+
+4. Transportation infrastructure drives EJ disparities
+   - Highways, interchanges, and high-density transit corridors create localized exposures invisible in statewide PM₂.₅ averages.
 
 ---
 
 ### Tools Used
-ArcGIS Pro | ArcGIS Online StoryMaps | Excel | Python |
+ArcGIS Pro | Excel 
 
 ---
 ### Data Sources
@@ -100,19 +115,21 @@ The PTRAF field (Traffic Proximity Index) contained nine null values in the EPA 
 ---
 
 ### Future Improvements
-
-
----
-
-### Citation
-
+- Add DSLPM (diesel exhaust) analysis
+- Incorporate population-weighted exposure
+- Add Boston metro zoom-in chapter in StoryMap
+- Analyze transportation change post–South Coast Rail
 
 ---
 
 ### Author
 **Alyssa Pacheco**
+
 Environmental Data Scientist | GIS & Analytics for Ecology & Conservation
-📍 New Bedford, Massachusetts
+
+📍 Massachusetts
+
 🌐 alyssapacheco.com
+
 🐙 github.com/alyssapacheco2721
 
