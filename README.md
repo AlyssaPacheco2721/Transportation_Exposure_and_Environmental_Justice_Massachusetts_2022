@@ -94,8 +94,10 @@ ArcGIS Pro | Excel
   [https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html)  
   Supplies tract boundaries and demographic data (median household income, population counts, etc.).
 
-  -**MBTA / MassGIS Transportation Data**
-  [https://www.mass.gov/info-details/massgis-data-mbta-rapid-transit]
+- **MBTA / MassGIS Transportation Data**
+
+  https://www.mass.gov/info-details/massgis-data-mbta-rapid-transit
+
   Rail lines and highway corridors for context
 
 ---
