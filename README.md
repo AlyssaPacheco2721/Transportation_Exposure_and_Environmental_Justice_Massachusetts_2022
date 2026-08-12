@@ -26,12 +26,14 @@ The project demonstrates how **GIS, demographic data, and environmental indicato
 
 ## Tools & Skills
 
-**ArcGIS Pro • Microsoft Excel • EPA EJScreen • Spatial Analysis • Environmental Justice Analysis • Demographic Data • Summary Statistics • Data Visualization • Environmental Mapping**
+**ArcGIS Pro • Python • pandas • matplotlib • Microsoft Excel • EPA EJScreen • Spatial Analysis • Environmental Justice Analysis • Demographic Data • Summary Statistics • Data Visualization • Environmental Mapping**
 
 - **ArcGIS Pro** — spatial data preparation, demographic classification, transportation overlays, summary statistics, and map development.
-- **Microsoft Excel** — organization of summary outputs and chart development.
-- **EPA EJScreen** — census-tract-level environmental and demographic indicators.
-- **GIS analysis** — integration of environmental exposure, demographic, and transportation datasets.
+- **Python / pandas** — imported and worked with summary datasets generated during the analysis.
+- **matplotlib** — created programmatic visualizations of environmental exposure patterns, including PM₂.₅ comparisons among demographic groups.
+- **Microsoft Excel** — supported organization and review of summary outputs.
+- **EPA EJScreen** — provided census-tract-level environmental and demographic indicators used in the environmental justice analysis.
+- **GIS analysis** — integrated environmental exposure, demographic, and transportation datasets to examine spatial patterns across Massachusetts.
 
 ---
 
@@ -164,6 +166,7 @@ A statewide pollution average may show relatively little variation while a more 
 - 📊 [PM₂.₅ Summary Table](outputs/summary_table_PM25.csv)
 - 📊 [PTRAF Summary Table](outputs/summary_table_PTRAF.csv)
 - 📈 [PTRAF Exposure Charts](outputs/PTRAF_charts.pdf)
+- 🐍 [`scripts/ej_analysis.py`](scripts/ej_analysis.py) — Python analysis and visualization script using pandas and matplotlib
 - 📄 [Final Project Summary](outputs/EJ_Transportation_Project_Summary2.pdf)
 - 🗺️ `EJ_AirQuality_Mass.aprx` — ArcGIS Pro project file
 
